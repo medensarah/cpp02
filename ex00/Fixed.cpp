@@ -6,13 +6,13 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 14:35:19 by smedenec          #+#    #+#             */
-/*   Updated: 2026/09/28 15:22:26 by smedenec         ###   ########.fr       */
+/*   Updated: 2026/09/28 19:21:22 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-const int Fixed::_bits = 8;
+const int	Fixed::_bits = 8;
 
 Fixed::Fixed() : _value(0)
 {

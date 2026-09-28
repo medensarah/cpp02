@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 14:35:19 by smedenec          #+#    #+#             */
-/*   Updated: 2026/09/28 19:21:18 by smedenec         ###   ########.fr       */
+/*   Updated: 2026/09/28 20:11:36 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,76 @@ int	Fixed::toInt() const
 float	Fixed::toFloat() const
 {
 	return ((static_cast<float>(this->_value)) / (1 << _bits));
+}
+
+bool	Fixed::operator>(const Fixed &other) const
+{
+	return (this->_value > other._value);
+}
+
+bool	Fixed::operator<(const Fixed &other) const
+{
+	return (this->_value < other._value);
+}
+
+bool	Fixed::operator>=(const Fixed &other) const
+{
+	return (this->_value >= other._value);
+}
+
+bool	Fixed::operator<=(const Fixed &other) const
+{
+	return (this->_value <= other._value);
+}
+
+bool	Fixed::operator==(const Fixed &other) const
+{
+	return (this->_value == other._value);
+}
+
+bool	Fixed::operator!=(const Fixed &other) const
+{
+	return (this->_value != other._value);
+}
+
+Fixed	Fixed::operator+(const Fixed &other) const
+{
+	Fixed	result;
+	result.setRawBits(this->_value + other._value);
+	return (result);
+}
+
+Fixed	Fixed::operator-(const Fixed &other) const
+{
+	Fixed result;
+	result.setRawBits(this->_value - other._value);
+	return (result);
+}
+
+Fixed	&Fixed::operator++()
+{
+	this->_value += 1;
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int)
+{
+	Fixed old(*this);
+	this->_value += 1;
+	return (old);
+}
+
+Fixed	&Fixed::operator--()
+{
+	this->_value -= 1;
+	return (*this);
+}
+
+Fixed	Fixed::operator--(int)
+{
+	Fixed old(*this);
+	this->_value -= 1;
+	return (old);
 }
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &fixed)
