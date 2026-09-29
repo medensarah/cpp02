@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 21:17:24 by smedenec          #+#    #+#             */
-/*   Updated: 2026/09/29 18:21:04 by smedenec         ###   ########.fr       */
+/*   Updated: 2026/09/29 19:25:06 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,21 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
+
+	Fixed x(10);
+	Fixed y(3);
+
+	std::cout << "x + y = " << x + y << std::endl;
+	std::cout << "x - y = " << x - y << std::endl;
+	std::cout << "x * y = " << x * y << std::endl;
+	std::cout << "x / y = " << x / y << std::endl;
+
+	std::cout << (x > y) << std::endl;
+	std::cout << (x < y) << std::endl;
+	std::cout << (x == y) << std::endl;
+
+	std::cout << Fixed::min(x, y) << std::endl;
+	std::cout << Fixed::max(x, y) << std::endl;
 
 	return (0);
 }

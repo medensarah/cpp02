@@ -6,7 +6,7 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 14:35:19 by smedenec          #+#    #+#             */
-/*   Updated: 2026/09/28 19:21:18 by smedenec         ###   ########.fr       */
+/*   Updated: 2026/09/29 19:13:07 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed() : _value(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int value) : _value(value << _bits)
+Fixed::Fixed(const int value) : _value(value * (1 << _bits))
 {
 	std::cout << "Int constructor called" << std::endl;
 }
@@ -60,7 +60,7 @@ void	Fixed::setRawBits(int const raw)
 
 int	Fixed::toInt() const
 {
-	return (this->_value >> _bits);
+	return (this->_value / (1 << _bits));
 }
 
 float	Fixed::toFloat() const
