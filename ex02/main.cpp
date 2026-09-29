@@ -6,21 +6,26 @@
 /*   By: smedenec <smedenec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/27 21:17:24 by smedenec          #+#    #+#             */
-/*   Updated: 2026/09/28 20:03:03 by smedenec         ###   ########.fr       */
+/*   Updated: 2026/09/29 18:21:04 by smedenec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Fixed.hpp"
 
-int	main()
+int main( void )
 {
-	Fixed a(10);
-	Fixed b(5);
+	Fixed	a;
+	Fixed	const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-	Fixed c = a - b;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
 
-	std::cout << c << std::endl;
 	return (0);
 }
 //Developer: Reload Window
